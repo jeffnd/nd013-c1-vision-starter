@@ -152,7 +152,11 @@ The waymo dataset consists of 5 classes: unknown, vehicle, pedestrian, sign and 
 Images in dataset containing examples from each class are shown below. Vehicle is visualized in red, pedestrian in blue and cyclist in green.
 
 ![image](https://user-images.githubusercontent.com/94186015/202640883-b8d04ec0-92f8-4cc1-ac40-eeb6342e0845.png)
+
 Dataset analysis is performed on 10000 random images in Exploratory Data Analysis file. The class distribution of the bboxes in the Dataset, the distribution of the number of bboxes in an image and the distribution of the bbox area sizes are visualized as follows.
+
+![image](https://user-images.githubusercontent.com/94186015/202642793-e08ab226-31fa-4960-82b7-b818c947783f.png)
+
 
 #### Cross validation
 This section should detail the cross validation strategy and justify your approach.

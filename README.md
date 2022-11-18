@@ -171,7 +171,12 @@ Images in dataset containing examples from each class are shown below. Vehicle i
 
 ![image](https://user-images.githubusercontent.com/94186015/202640883-b8d04ec0-92f8-4cc1-ac40-eeb6342e0845.png)
 
-Dataset analysis is performed on 2000 random images in Exploratory Data Analysis file. The class distribution of the bboxes in the Dataset, the distribution of the number of bboxes in an image and the distribution of the bbox area sizes are visualized as follows.
+To help understand the distribution of the car object class versus the bicycle and pedestrian object classes I took a sample of num2=2000 images from the dataset and tallied up the quantity of each specific class. I then scaled the quantity by dividing by the number of sampled images. The resulting chart is titled "Distribution of Object Classes". This chart clearly illustrates the bias in the dataset towards the car object class, with an average of ~19 cars per image.
+
+to estimate the day/night distribution of images in the dataset, I calculated the distribution of average brightness for each image in the dataset. This histrogram plot is titled "Distribution of Image brightness ". From the histrogram plot we can see that the majority of the images fall roughly within the middle range of 80-120 out of 255 average brightness . Images in this range are standard daytime images. A small minority of the images were taken at night and are represented as the datapoints in the 10-20 out of 255 average brightness .
+
+Lastly, when viewing images the from .tfrecord files in the "training_and_validation" directory I made a note of each file containing either blurry (rain or fog) or dark (nightime) images. These notes will prove helpful when splitting the dataset to ensure that I have each type of image quality in both the training and validation splits.
+The class distribution of the bboxes in the Dataset, the distribution of the number of bboxes in an image and the distribution of the bbox area sizes are visualized as follows.
 
 ![image](https://user-images.githubusercontent.com/94186015/202642793-e08ab226-31fa-4960-82b7-b818c947783f.png)
 

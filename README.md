@@ -223,7 +223,12 @@ Recall
 
 ![220909A3](https://user-images.githubusercontent.com/94186015/202703005-feebf53d-6e0b-4e36-a195-14ca63fd15aa.PNG)
 
+
+
 Althought we see a decrease in model loss, increase in precision and recall is tiny. The inference result is almost the same as that of the reference model, which barely detect anything. Thus, there is no pointing showing the inference video here.
+
+![2022-11-17_213418](https://user-images.githubusercontent.com/94186015/202703903-5bed706f-51fc-491e-a472-f6ae2f5c4a9e.png)
+
 By investigating the model on the test dataset, we can see the model is not goot at detecting small objects in the images. As cyclists only appear very scarcely in the datasets, we can expect the model to struggle to detect cyclists. In the future, improvements can be made in using higher resolution data for training, and sampling with more images with cyclist. More importantly, we want train for more steps with lower learning rate so that the model converges, provided that computers have larger computational resources and memories.
 
 

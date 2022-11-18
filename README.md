@@ -68,6 +68,7 @@ In the classroom workspace, every library and package should already be installe
 ### Exploratory Data Analysis
 
 You should use the data already present in `/home/workspace/data/waymo` directory to explore the dataset! This is the most important task of any machine learning project. To do so, open the `Exploratory Data Analysis` notebook. In this notebook, your first task will be to implement a `display_instances` function to display images and annotations using `matplotlib`. This should be very similar to the function you created during the course. Once you are done, feel free to spend more time exploring the data and report your findings. Report anything relevant about the dataset in the writeup.
+![image](https://user-images.githubusercontent.com/94186015/202640883-b8d04ec0-92f8-4cc1-ac40-eeb6342e0845.png)
 
 Keep in mind that you should refer to this analysis to create the different spits (training, testing and validation).
 
@@ -149,6 +150,11 @@ This section should contain a brief description of the steps to follow to run th
 ### Dataset
 #### Dataset analysis
 This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
+The waymo dataset consists of 5 classes: unknown, vehicle, pedestrian, sign and cyclist. Vehicle, pedestrian, and cyclist classes are used in this project.
+Images in dataset containing examples from each class are shown below. Vehicle is visualized in red, pedestrian in blue and cyclist in green.
+
+Dataset analysis is performed on 10000 random images in Exploratory Data Analysis file. The class distribution of the bboxes in the Dataset, the distribution of the number of bboxes in an image and the distribution of the bbox area sizes are visualized as follows.
+
 #### Cross validation
 This section should detail the cross validation strategy and justify your approach.
 

@@ -164,6 +164,33 @@ This section should detail the cross validation strategy and justify your approa
 ### Training
 #### Reference experiment
 This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances.
+The reference model is ResNet50 without augumentaion (see details of model parameters in experiments/reference/pipeline_new.config). Training loss of the model is shown as follows:
+
+![220908](https://user-images.githubusercontent.com/94186015/202697580-6c1a752e-ca58-4e5c-b34c-7e1f9643d6de.PNG)
+
+Precision:
+
+![220908a](https://user-images.githubusercontent.com/94186015/202697927-be17fdb9-8331-4015-96dd-ece52807e0df.PNG)
+
+Recall:
+
+![220908b](https://user-images.githubusercontent.com/94186015/202698065-df957bfe-a65d-457b-9a12-f1d60c78a3cb.PNG)
+
+From the plots, it is obvious that both losses are very noisy, especially localization loss. And localization loss does not seem to converge. Precision and Recall are extremly low and the model can barely detect and classify any object.
 
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
+1.Increase the batch size from 2 to 6: batch size of 2 is too low for regular training of a large-size CNN like ResNet50. The detailed pipeline is in experiments/test1/pipeline_new.config. The results are as follows.
+Training and validation loss of the model:
+
+![220909](https://user-images.githubusercontent.com/94186015/202698612-1cac7422-9551-454d-9880-7d02574d67ab.PNG)
+
+Precision:
+
+![220909a1](https://user-images.githubusercontent.com/94186015/202698821-6e97822e-a3a2-4392-ade5-179f1fd9bc33.PNG)
+
+Recall:
+
+
+
+

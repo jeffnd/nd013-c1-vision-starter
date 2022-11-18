@@ -166,30 +166,23 @@ gcloud auth login
 ### Dataset
 #### Dataset analysis
 
-The waymo dataset consists of 5 classes: unknown, vehicle, pedestrian, sign and cyclist. Vehicle, pedestrian, and cyclist classes are used in this project.
-Images in dataset containing examples from each class are shown below. Vehicle is visualized in red, pedestrian in blue and cyclist in green.
+The waymo dataset mainly consists of 3 classes: vehicle, pedestrian and cyclist. Images in dataset containing examples from each class are shown below. The bounding-box for Vehicle is visualized in red, pedestrian in blue and cyclist in green.
 
 ![image](https://user-images.githubusercontent.com/94186015/202640883-b8d04ec0-92f8-4cc1-ac40-eeb6342e0845.png)
 
-Dataset analysis is performed on num1=2000 random images in Exploratory Data Analysis file. The class distribution of the bboxes in the Dataset, the distribution of the number of bboxes in an image and the distribution of the bbox area sizes are visualized as follows.
+Dataset analysis is performed on num1=2000 random images in Exploratory Data Analysis file,the distribution of the 3 classes in the Dataset is visualized as follows.
 
 ![221118b](https://user-images.githubusercontent.com/94186015/202746493-5766fa1c-0abf-4eb4-8b8a-b2d587d7d6a9.PNG)
     
-To help understand the distribution of the car object class versus the bicycle and pedestrian object classes I took a sample of num2=3000 images from the dataset and tallied up the quantity of each specific class. I then scaled the quantity by dividing by the number of sampled images. The resulting chart is titled "Distribution of Object Classes". This chart clearly illustrates the bias in the dataset towards the car object class, with an average of ~19 cars per image.
+The distribution of the car object class versus the bicycle and pedestrian object classes in the dataset(num2=3000 images) is visualized as follows. It is titled "Distribution of Object Classes". 
     
 ![221118c](https://user-images.githubusercontent.com/94186015/202749102-7a2ff962-7b0f-47b5-b356-b3143605f3f0.PNG)
     
 
-to estimate the day/night distribution of images in the dataset, I calculated the distribution of average brightness for each image in the dataset. This histrogram plot is titled "Distribution of Image brightness ". From the histrogram plot we can see that the majority of the images fall roughly within the middle range of 80-120 out of 255 average brightness . Images in this range are standard daytime images. A small minority of the images were taken at night and are represented as the datapoints in the 10-20 out of 255 average brightness .
+To estimate the day/night distribution of images in the dataset, the distribution of average brightness for each image in the dataset. The "Distribution of Image brightness " is illustrated as following. The majority of the images fall roughly within the middle range of 80-120 out of average brightness . Images in this range are daytime images. A small minority of the images were taken at night are in the 10-20 out of average brightness .
     
  ![221118d](https://user-images.githubusercontent.com/94186015/202749213-2c43c0b4-0cad-4823-b640-fe4561b36452.PNG)
    
-
-Lastly, when viewing images the from .tfrecord files in the "training_and_validation" directory I made a note of each file containing either blurry (rain or fog) or dark (nightime) images. These notes will prove helpful when splitting the dataset to ensure that I have each type of image quality in both the training and validation splits.
-The class distribution of the bboxes in the Dataset, the distribution of the number of bboxes in an image and the distribution of the bbox area sizes are visualized as follows.
-
-![image](https://user-images.githubusercontent.com/94186015/202642793-e08ab226-31fa-4960-82b7-b818c947783f.png)
-
 
 #### Cross validation
 The creation of training and validation split was already done in the workspace, with 87 images and 10 images in the training and validation set.

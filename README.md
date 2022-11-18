@@ -203,6 +203,33 @@ We see significant improvement in model loss, and Precision-Recall rate. This is
 
 ![2022-11-17_214405](https://user-images.githubusercontent.com/94186015/202701337-fd8fe446-307f-4107-a5c2-ed0afef81e5c.png)
 
+2.Augmentation
+agumentation can be found in Explore augmentations.ipynb, and the detailed pipeline is in experiments/experiment2/pipeline_new.config. However, due to limitation of memory in the VM workspace, we have to resort to batch size of 2, and step size of 2500, which is very likely not enough for the network to converge. As a result, the performance does improve a lot, compared with reference model.
+
+The results are as follows.
+
+Training and validation loss of the model 
+
+![220909AA](https://user-images.githubusercontent.com/94186015/202702653-34e48686-5260-465f-a187-bada79699de2.PNG)
+
+![220909A4](https://user-images.githubusercontent.com/94186015/202703206-1696e30a-a752-4452-ba59-bada1f59780b.PNG)
+
+
+Precision
+
+![220909A2](https://user-images.githubusercontent.com/94186015/202702935-9128db8a-0692-4471-9a33-bd89f78f6661.PNG)
+
+Recall
+
+![220909A3](https://user-images.githubusercontent.com/94186015/202703005-feebf53d-6e0b-4e36-a195-14ca63fd15aa.PNG)
+
+Althought we see a decrease in model loss, increase in precision and recall is tiny. The inference result is almost the same as that of the reference model, which barely detect anything. Thus, there is no pointing showing the inference video here.
+By investigating the model on the test dataset, we can see the model is not goot at detecting small objects in the images. As cyclists only appear very scarcely in the datasets, we can expect the model to struggle to detect cyclists. In the future, improvements can be made in using higher resolution data for training, and sampling with more images with cyclist. More importantly, we want train for more steps with lower learning rate so that the model converges, provided that computers have larger computational resources and memories.
+
+
+
+
+
 
 
 

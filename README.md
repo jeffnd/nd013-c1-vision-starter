@@ -137,23 +137,41 @@ Finally, you can create a video of your model's inferences for any tf record fil
 python inference_video.py --labelmap_path label_map.pbtxt --model_path experiments/reference/exported/saved_model --tf_record_path /data/waymo/testing/segment-12200383401366682847_2552_140_2572_140_with_camera_labels.tfrecord --config_path experiments/reference/pipeline_new.config --output_path animation.gif
 ```
 
-## Submission Template
+## Submission 
 
 ### Project overview
-This section should contain a brief description of the project and what we are trying to achieve. Why is object detection such an important component of self driving car systems?
+This repository is for the first project of Udacity Self Driving Car Engineer Nanodegree. The goal of the project is Implementation of an Object Detection model for self-driving cars. In this project, we will utilize TF object detection API for better detection of objects on road, like cars, pedestrians, and cyclists. We will mainly use ResNet50 trained by Waymo Open dataset to detect and classify objects.
 
 ### Set up
-This section should contain a brief description of the steps to follow to run the code for this repository.
+For local setup if you have your own Nvidia GPU, you can use the provided Dockerfile and requirements in the build directory of the starter code.
 
+The instructions below are also contained within the build directory of the starter code. Requirements
+
+NVIDIA GPU with the latest driver installed
+docker / nvidia-docker
+Build Build the image with:
+
+docker build -t project-dev -f Dockerfile .
+Create a container with:
+
+docker run --gpus all -v <PATH TO LOCAL PROJECT FOLDER>:/app/project/ --network=host -ti project-dev bash
+and any other flag you find useful to your system (eg, --shm-size).
+Set up Once in container, you will need to install gsutil, which you can easily do by running:
+
+curl https://sdk.cloud.google.com | bash
+Once gsutil is installed and added to your path, you can auth using:
+
+gcloud auth login
+    
 ### Dataset
 #### Dataset analysis
-This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
+
 The waymo dataset consists of 5 classes: unknown, vehicle, pedestrian, sign and cyclist. Vehicle, pedestrian, and cyclist classes are used in this project.
 Images in dataset containing examples from each class are shown below. Vehicle is visualized in red, pedestrian in blue and cyclist in green.
 
 ![image](https://user-images.githubusercontent.com/94186015/202640883-b8d04ec0-92f8-4cc1-ac40-eeb6342e0845.png)
 
-Dataset analysis is performed on 10000 random images in Exploratory Data Analysis file. The class distribution of the bboxes in the Dataset, the distribution of the number of bboxes in an image and the distribution of the bbox area sizes are visualized as follows.
+Dataset analysis is performed on 2000 random images in Exploratory Data Analysis file. The class distribution of the bboxes in the Dataset, the distribution of the number of bboxes in an image and the distribution of the bbox area sizes are visualized as follows.
 
 ![image](https://user-images.githubusercontent.com/94186015/202642793-e08ab226-31fa-4960-82b7-b818c947783f.png)
 
@@ -163,7 +181,7 @@ This section should detail the cross validation strategy and justify your approa
 
 ### Training
 #### Reference experiment
-This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances.
+
 The reference model is ResNet50 without augumentaion (see details of model parameters in experiments/reference/pipeline_new.config). Training loss of the model is shown as follows:
 
 ![220908](https://user-images.githubusercontent.com/94186015/202697580-6c1a752e-ca58-4e5c-b34c-7e1f9643d6de.PNG)
@@ -182,7 +200,7 @@ Recall:
 From the plots, it is obvious that both losses are very noisy, especially localization loss. And localization loss does not seem to converge. Precision and Recall are extremly low and the model can barely detect and classify any object.
 
 #### Improve on the reference
-This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
+
 1.Increase the batch size from 2 to 6: batch size of 2 is too low for regular training of a large-size CNN like ResNet50. The detailed pipeline is in experiments/test1/pipeline_new.config. The results are as follows.
 Training and validation loss of the model:
 

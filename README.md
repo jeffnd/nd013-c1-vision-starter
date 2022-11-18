@@ -177,7 +177,7 @@ Dataset analysis is performed on 2000 random images in Exploratory Data Analysis
 
 
 #### Cross validation
-This section should detail the cross validation strategy and justify your approach.
+The creation of training and validation split was already done in the workspace, with 87 images and 10 images in the training and validation set.
 
 ### Training
 #### Reference experiment

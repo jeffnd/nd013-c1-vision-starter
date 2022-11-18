@@ -171,7 +171,13 @@ Images in dataset containing examples from each class are shown below. Vehicle i
 
 ![image](https://user-images.githubusercontent.com/94186015/202640883-b8d04ec0-92f8-4cc1-ac40-eeb6342e0845.png)
 
-To help understand the distribution of the car object class versus the bicycle and pedestrian object classes I took a sample of num2=2000 images from the dataset and tallied up the quantity of each specific class. I then scaled the quantity by dividing by the number of sampled images. The resulting chart is titled "Distribution of Object Classes". This chart clearly illustrates the bias in the dataset towards the car object class, with an average of ~19 cars per image.
+Dataset analysis is performed on num1=2000 random images in Exploratory Data Analysis file. The class distribution of the bboxes in the Dataset, the distribution of the number of bboxes in an image and the distribution of the bbox area sizes are visualized as follows.
+
+![221118b](https://user-images.githubusercontent.com/94186015/202746493-5766fa1c-0abf-4eb4-8b8a-b2d587d7d6a9.PNG)
+    
+To help understand the distribution of the car object class versus the bicycle and pedestrian object classes I took a sample of num2=3000 images from the dataset and tallied up the quantity of each specific class. I then scaled the quantity by dividing by the number of sampled images. The resulting chart is titled "Distribution of Object Classes". This chart clearly illustrates the bias in the dataset towards the car object class, with an average of ~19 cars per image.
+    
+    
 
 to estimate the day/night distribution of images in the dataset, I calculated the distribution of average brightness for each image in the dataset. This histrogram plot is titled "Distribution of Image brightness ". From the histrogram plot we can see that the majority of the images fall roughly within the middle range of 80-120 out of 255 average brightness . Images in this range are standard daytime images. A small minority of the images were taken at night and are represented as the datapoints in the 10-20 out of 255 average brightness .
 

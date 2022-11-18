@@ -168,6 +168,9 @@ The reference model is ResNet50 without augumentaion (see details of model param
 
 ![220908](https://user-images.githubusercontent.com/94186015/202697580-6c1a752e-ca58-4e5c-b34c-7e1f9643d6de.PNG)
 
+![220908c](https://user-images.githubusercontent.com/94186015/202700130-51b4d785-d918-4d38-8ea4-45ea92414a4b.PNG)
+
+
 Precision:
 
 ![220908a](https://user-images.githubusercontent.com/94186015/202697927-be17fdb9-8331-4015-96dd-ece52807e0df.PNG)
@@ -185,11 +188,23 @@ Training and validation loss of the model:
 
 ![220909](https://user-images.githubusercontent.com/94186015/202698612-1cac7422-9551-454d-9880-7d02574d67ab.PNG)
 
+![220909c](https://user-images.githubusercontent.com/94186015/202700552-944b36e5-49cf-4af1-ad7c-a8d6b441fd24.PNG)
+
+
 Precision:
 
 ![220909a1](https://user-images.githubusercontent.com/94186015/202698821-6e97822e-a3a2-4392-ade5-179f1fd9bc33.PNG)
 
 Recall:
+
+![220909b](https://user-images.githubusercontent.com/94186015/202700704-c9b29621-ff07-4445-933f-16515faedbcd.PNG)
+
+We see significant improvement in model loss, and Precision-Recall rate. This is a indication of better performance. A video based on the model inferences for data/test/segment-12200383401366682847_2552_140_2572_140_with_camera_labels.tfrecord. We can see the model is now able to detect and classify objects nearby, but not the smaller objects far away. 
+
+![2022-11-17_214405](https://user-images.githubusercontent.com/94186015/202701337-fd8fe446-307f-4107-a5c2-ed0afef81e5c.png)
+
+
+
 
 
 

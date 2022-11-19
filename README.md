@@ -185,7 +185,7 @@ To estimate the day/night distribution of images in the dataset, the distributio
    
 
 #### Cross validation
-The creation of training and validation split was already done in the workspace, with 87 images and 10 images in the training and validation set.
+The creation of training and validation split was already done in the workspace, with 86 images and 10 images in the training and validation set.
 
 ### Training
 #### Reference experiment
@@ -225,12 +225,12 @@ Recall:
 
 ![220909b](https://user-images.githubusercontent.com/94186015/202700704-c9b29621-ff07-4445-933f-16515faedbcd.PNG)
 
-We see significant improvement in model loss, and Precision-Recall rate. This is a indication of better performance. A video based on the model inferences for data/test/segment-12200383401366682847_2552_140_2572_140_with_camera_labels.tfrecord. We can see the model is now able to detect and classify objects nearby, but not the smaller objects far away. 
+We see some improvement in model loss, and Precision-Recall rate. This is a indication of better performance.
 
 ![2022-11-17_214405](https://user-images.githubusercontent.com/94186015/202701337-fd8fe446-307f-4107-a5c2-ed0afef81e5c.png)
 
 2.Augmentation
-agumentation can be found in Explore augmentations.ipynb, and the detailed pipeline is in experiments/experiment2/pipeline_new.config. However, due to limitation of memory in the VM workspace, we have to resort to batch size of 2, and step size of 2500, which is very likely not enough for the network to converge. As a result, the performance does improve a lot, compared with reference model.
+Agumentation can be found in Explore augmentations.ipynb, and the detailed pipeline is in experiments/experiment2/pipeline_new.config. However, due to limitation of memory in the VM workspace, we have to resort to batch size of 2, and step size of 2500, which is very likely not enough for the network to converge. As a result, the performance does improve a lot, compared with reference model.
 
 The results are as follows.
 

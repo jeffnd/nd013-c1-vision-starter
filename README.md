@@ -230,7 +230,7 @@ We see some improvement in model loss, and Precision-Recall rate. This is a indi
 ![2022-11-17_214405](https://user-images.githubusercontent.com/94186015/202701337-fd8fe446-307f-4107-a5c2-ed0afef81e5c.png)
 
 2.Augmentation
-Agumentation can be found in Explore augmentations.ipynb, and the detailed pipeline is in experiments/experiment2/pipeline_new.config. However, due to limitation of memory in the VM workspace, we have to resort to batch size of 2, and step size of 2500, which is very likely not enough for the network to converge. As a result, the performance does improve a lot, compared with reference model.
+Agumentation can be found in Explore augmentations.ipynb, and the detailed pipeline is in experiments/test2/pipeline_new.config. However, due to limitation of memory in the VM workspace, we have to resort to batch size of 2, and step size of 2500, which is very likely not enough for the network to converge. As a result, the performance does improve a lot, compared with reference model.
 
 The results are as follows.
 
@@ -251,12 +251,12 @@ Recall
 
 
 
-Althought we see a decrease in model loss, increase in precision and recall is tiny. The inference result is almost the same as that of the reference model, which barely detect anything. 
+Althought we see a decrease in model loss, increase in precision and recall is little. The inference result is almost the same as that of the reference model, which barely detect anything. 
 
 ![221118](https://user-images.githubusercontent.com/94186015/202716896-b486625f-553c-4fdc-b011-9eaac636b3d7.PNG)
 
 
-By investigating the model on the test dataset, we can see the model is not good at detecting small objects in the images. As cyclists only appear very scarcely in the datasets, we can expect the model to struggle to detect cyclists. In the future, improvements can be made in using higher resolution data for training, and sampling with more images with cyclist. More importantly, we want train for more steps with lower learning rate so that the model converges, provided that computers have larger computational resources and memories.
+By investigating the model on the test dataset, we can see the model is not good at detecting small objects in the images. As cyclists only appear very scarcely in the datasets, we can expect the model to struggle to detect cyclists. More improvements maybe made in using higher resolution data for training, and sampling with more images with cyclist. Especially, we'd like train for more steps with lower learning rate so that the model converges, provided that computers have larger computational resources and memories.
 
 
 

@@ -209,7 +209,7 @@ From the plots, it is obvious that both losses are very noisy, especially locali
 
 #### Improve on the reference
 
-1.Increase the batch size from 2 to 6: batch size of 2 is too low for regular training of a large-size CNN like ResNet50. The detailed pipeline is in experiments/test1/pipeline_new.config. The results are as follows.
+1.Increase the batch size from 2 to 6: batch size of 2 is too low for regular training of a large-size CNN like ResNet50. The detailed pipeline is in experiments/reference/test1/pipeline_new.config. The results are as follows.
 Training and validation loss of the model:
 
 ![220909](https://user-images.githubusercontent.com/94186015/202698612-1cac7422-9551-454d-9880-7d02574d67ab.PNG)
@@ -230,7 +230,7 @@ We see some improvement in model loss, and Precision-Recall rate. This is a indi
 ![2022-11-17_214405](https://user-images.githubusercontent.com/94186015/202701337-fd8fe446-307f-4107-a5c2-ed0afef81e5c.png)
 
 2.Augmentation
-Agumentation can be found in Explore augmentations.ipynb, and the detailed pipeline is in experiments/test2/pipeline_new.config. However, due to limitation of memory in the VM workspace, we have to resort to batch size of 2, and step size of 2500, which is very likely not enough for the network to converge. As a result, the performance does improve a lot, compared with reference model.
+Agumentation can be found in Explore augmentations.ipynb, and the detailed pipeline is in experiments/reference/test2/pipeline_new.config. However, due to limitation of memory in the VM workspace, we have to resort to batch size of 2, and step size of 2500, which is very likely not enough for the network to converge. As a result, the performance does improve a lot, compared with reference model.
 
 The results are as follows.
 
